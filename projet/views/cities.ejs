@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+  <main>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country Code</th>
+          <th>District</th>
+          <th>Population</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (cities.length > 0) { %>
+          <% cities.forEach(city => { %>
+            <tr>
+              <td><%= city.Name %></td>
+              <td><%= city.CountryCode %></td>
+              <td><%= city.District %></td>
+              <td><%= city.Population %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="4">No data available</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p>&copy; 2024 World Data Project. All rights reserved.</p>
+  </footer>
+</body>
+</html>

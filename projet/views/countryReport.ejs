@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/main.css"> 
+</head>
+<body>
+  <h1><%= title %></h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Region</th>
+        <th>Population</th>
+        <th>Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (countries.length > 0) { %>
+        <% countries.forEach(country => { %>
+          <tr>
+            <td><%= country.Code %></td>
+            <td><%= country.Name %></td>
+            <td><%= country.Continent %></td>
+            <td><%= country.Region %></td>
+            <td><%= country.Population %></td>
+            <td><%= country.Capital %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="6">No data available</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/main.css"> 
+</head>
+<body>
+  <h1><%= title %></h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (countries.length > 0) { %>
+        <% countries.forEach(country => { %>
+          <tr>
+            <td><%= country.Name %></td>
+            <td><%= country.Population %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="2">No data available</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

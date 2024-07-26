@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/main.css"> 
+</head>
+<body>
+  <h1><%= title %></h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>District</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (cities.length > 0) { %>
+        <% cities.forEach(city => { %>
+          <tr>
+            <td><%= city.CityName %></td>
+            <td><%= city.CountryName %></td>
+            <td><%= city.District %></td>
+            <td><%= city.Population %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="4">No data available</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
